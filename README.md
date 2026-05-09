@@ -292,14 +292,10 @@ Possible future extensions include:
 
 ## Team Members
 
-- Salman Ali Malik
-- Rabiah
-- Areeba Nazim
-
+- Sana Ali
+- Syeda Kashaf Zahra
 ---
 
-
----
 
 # Conclusion
 
