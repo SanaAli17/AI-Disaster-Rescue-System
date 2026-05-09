@@ -239,16 +239,8 @@ python main.py
 ## Run Web Interface
 
 ```bash
-streamlit run app.py
-```
-
-or
-
-```bash
 python app.py
 ```
-
-(depending on your implementation)
 
 ---
 
@@ -268,16 +260,16 @@ The system evaluates ML models using:
 
 The project supports multiple real-time dynamic scenarios:
 
-## Scenario 1 — Road Blockage
+## Scenario 1: Road Blockage
 - Recomputes path using A*
 
-## Scenario 2 — Risk Increase
+## Scenario 2: Risk Increase
 - Switches to Risk-Aware A*
 
-## Scenario 3 — New Victim
+## Scenario 3: New Victim
 - Re-evaluates victim priorities
 
-## Scenario 4 — Resource Depletion
+## Scenario 4: Resource Depletion
 - Reassigns victims using CSP
 
 ---
