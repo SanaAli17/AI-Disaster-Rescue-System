@@ -1,4 +1,4 @@
-# AI-Disaster-Rescue-System
+# AI Disaster Rescue System
 
 ## Overview
 
@@ -211,7 +211,7 @@ Main integration file connecting all AI components together.
 ## Clone Repository
 
 ```bash
-git clone https://github.com/yourusername/AI-Disaster-Rescue-System.git
+git clone https://github.com/SanaAli17/AI-Disaster-Rescue-System.git
 ```
 
 ## Move Into Project Directory
