@@ -26,6 +26,7 @@ def fuzzify_blockage(prob):
     else:
         return "likely"
 
+
 # FUZZY INFERENCE SYSTEM
 
 def fuzzy_inference(distance, risk, severity, blockage_prob):
@@ -39,10 +40,12 @@ def fuzzy_inference(distance, risk, severity, blockage_prob):
     print(f"Severity: {severity}")
     print(f"Blockage Probability: {blockage_prob} -> {b}")
 
-    # RULE BASE
-    
     if severity == "critical":
-        if b == "likely":
+        if r == "high" and b == "likely":
+            decision = "HIGH (urgent but risky)"
+        elif r == "high" and d == "far":
+            decision = "HIGH (urgent but risky)"
+        elif b == "likely" and d == "far":
             decision = "HIGH (urgent but risky)"
         else:
             decision = "HIGH"
@@ -56,29 +59,36 @@ def fuzzy_inference(distance, risk, severity, blockage_prob):
             decision = "MEDIUM"
 
     else:  # minor
-        if r == "low" and b == "unlikely":
+        if r == "low" and b == "unlikely" and d == "far":
+            decision = "LOW"
+        elif r == "high" or b == "likely":
+            decision = "MEDIUM"
+        elif d == "near" and r == "low":
             decision = "LOW"
         else:
             decision = "MEDIUM"
 
-    return decision
+    print(f"Fuzzy Decision: {decision}")
 
+    return decision
 
 
 # IMPACT ANALYSIS FUNCTION
 
 def explain_uncertainty_impact(fuzzy_result):
+    result = fuzzy_result[0] if isinstance(fuzzy_result, tuple) else fuzzy_result
+
     print("\n--- UNCERTAINTY IMPACT ANALYSIS ---")
 
-    if "risky" in fuzzy_result:
-        print("Uncertainty Impact: High blockage probability -> route considered unsafe")
+    if "risky" in result:
+        print("Uncertainty Impact: High blockage or risk -> route considered unsafe")
         print("Agent Decision: Prefer safer route even if longer")
 
-    elif fuzzy_result.startswith("HIGH"):
+    elif result.startswith("HIGH"):
         print("Uncertainty Impact: Severity dominates under uncertainty")
         print("Agent Decision: Immediate rescue prioritized")
 
-    elif fuzzy_result.startswith("MEDIUM"):
+    elif result.startswith("MEDIUM"):
         print("Uncertainty Impact: Balanced decision under uncertain conditions")
         print("Agent Decision: Moderate priority assigned")
 

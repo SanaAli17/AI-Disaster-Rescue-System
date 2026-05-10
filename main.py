@@ -284,8 +284,8 @@ dynamic_resource(env)
 evaluate_models()
 
 print("\n--- ML ANALYSIS ---")
-print("Decision Tree and Naive Bayes performed better on this dataset")
-print("kNN showed slightly lower accuracy due to sensitivity to data distribution")
+print("Decision Tree and KNN performed better on this dataset")
+print("Naive Bayes showed slightly lower accuracy due to its assumption that features are dependent.")
 
 
 print("\n--- RESCUE DECISION ---")

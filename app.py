@@ -665,8 +665,9 @@ def build_dashboard_data(scenario=None, dual_pickup=False):
         new_victim_event = f"Live update: critical victim added at {new_victim_cell}"
         new_victim_impact = (
             "Live mission update: "
-            f"added a new critical victim at {new_victim_cell}. "
-            "The active route shown remains from the current planning cycle."
+            f"added a new critical victim at {new_victim_cell}; "
+            f"the planner now targets V{new_selected_victim.id} "
+            f"(path length {len(new_victim_path)})."
         )
     else:
         new_victim_cell = None
