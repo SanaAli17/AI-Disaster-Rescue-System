@@ -140,7 +140,7 @@ def get_model_metrics() -> dict:
  
  
 # 8. PREDICTION FUNCTION  (used by simulation)
-─
+#─
 # Severity → incident_code mapping aligned with training encoding
 _SEVERITY_CODE = {"critical": 3, "moderate": 2, "minor": 1}
  
